@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+    react-app:
+        container_name: react-app
+        build: ./frontend
+        restart: always
+        ports:
+            - 4000:3000
+        depends_on:
+        - node-app
+    node-app:
+        build: ./backend
+        environment:
+            - DATABASE_HOST=db
+        depends_on:
+            - db
+        restart: always
+        ports:
+            - 8080:8080
+    db:
+        build: ./mysql
+        restart: always
+        environment:
+            MYSQL_DATABASE: bitcoin
+        ports:
+            - 3306:3306
+    
