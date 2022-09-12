@@ -17,4 +17,3 @@ URL Front-end : http://localhost:4000/
 
 URL Back-end : http://localhost:8080/
 
-Muchas gracias y ojalá nos veamos pronto en Palermo!!
